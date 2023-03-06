@@ -3,7 +3,7 @@ import datetime
 import pandas_datareader as pdr
 import quandl
 
-quandl.ApiConfig.api_key = 'Y5uaPbD-HG3auQ7JDwXd'
+quandl.ApiConfig.api_key = 'quandl_api_key'
 
 class MyStrategy(bt.Strategy):
     
@@ -23,7 +23,7 @@ cerebro = bt.Cerebro()
 start_date = datetime.datetime.now() - datetime.timedelta(days=5*365)
 end_date = datetime.datetime.now()
 
-data = bt.feeds.Quandl(dataname="WIKI/AAPL", apikey='Y5uaPbD-HG3auQ7JDwXd', fromdate=start_date, todate=end_date)
+data = bt.feeds.Quandl(dataname="WIKI/AAPL", apikey='quandl_api_key', fromdate=start_date, todate=end_date)
 
 cerebro.adddata(data)
 cerebro.addstrategy(MyStrategy)
